@@ -1,0 +1,85 @@
+/********* CARD.JS *********/
+
+.restaurantCard{
+    height: 180px;
+    position: relative;
+    width: 100%;
+    
+}
+
+.cardImage{
+    height: 100%;
+    width: 100%;
+}
+
+.cardTitle{
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+    bottom: 0px;
+    color: rgb(255, 255, 255);
+    font-family: 'Lato', sans-serif;
+    left: 0px;
+    padding: 6px 12px;
+    position: absolute;
+    width: 100%;
+}
+
+.cardTitle > h2 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.cardTitle > h4 {
+    font-size: 12px;
+}
+
+/********* DETAIL.JS *********/
+
+.detailCard{
+    font-family: 'Lato', sans-serif;
+    height: 0;
+    overflow: hidden;
+    transition: ease-in-out 0.3s height;
+}
+
+.smallMapContainer{
+    height: 180px;
+    width: 100%;
+}
+
+.detailTitle{
+    background: #34B379;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+    justify-content: center;
+    padding: 0px 12px;
+}
+
+.detailTitle > h2{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.detailTitle > h4{
+    font-size: 12px;
+}
+
+.cardDetails{
+    font-size: 16px;
+    padding: 16px 12px;
+}
+
+.cardDetails > p {
+    margin-bottom: 26px;
+}
+
+/*********** SMALLMAP.js **********/
+.markerToolTip > h3{
+    color: #34B379;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
