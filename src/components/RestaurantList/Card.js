@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import Detail from './Detail'
 import './RestaurantList.css'
 
@@ -19,7 +19,7 @@ export default class Card extends Component {
     render() {
         const { data } = this.props
     return (
-        <Fragment>
+        <div className = 'cardContainer'>
             <div className='restaurantCard' onClick={this.slideDetail}>
                 <img src={data.backgroundImageURL} className='cardImage' alt = 'Restaurant Hero'/>
                 <div className="cardTitle">
@@ -31,7 +31,7 @@ export default class Card extends Component {
             <div className='detailCard' ref={`detailCard${data.name}`}>
                 <Detail data={data}/>
             </div>
-        </Fragment>
+        </div>
     )
   }
 }

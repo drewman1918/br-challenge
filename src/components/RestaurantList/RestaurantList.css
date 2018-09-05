@@ -1,10 +1,13 @@
 /********* CARD.JS *********/
 
+.cardContainer{
+    max-width: 475px;
+}
 .restaurantCard{
     height: 180px;
     position: relative;
     width: 100%;
-    
+    cursor: pointer;
 }
 
 .cardImage{
@@ -82,4 +85,10 @@
     color: #34B379;
     font-family: 'Lato', sans-serif;
     font-size: 16px;
+}
+
+/********** MEDIA QUERIES *********/
+/********** RESTAURANTLIST.JS **********/
+@media (min-width: 475px){
+
 }
