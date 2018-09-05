@@ -63,6 +63,10 @@ class LargeMap extends Component {
             lng: points[0].lng
           }}
           bounds={bounds}
+          style={{
+            height: '100%',
+            width: '100%'
+          }}
         >
           {markers}
         </Map>

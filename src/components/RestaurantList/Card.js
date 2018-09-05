@@ -1,19 +1,15 @@
 import React, { Component } from 'react'
 import Detail from './Detail'
+import { connect } from 'react-redux'
+import { selectCard } from './../../ducks/restReducer'
 import './RestaurantList.css'
 
-export default class Card extends Component {
+class Card extends Component {
     
     slideDetail = () => {
         let cardToSlide = this.refs[`detailCard${this.props.data.name}`]
-        let currentHeight = cardToSlide.clientHeight
-        let realHeight = cardToSlide.scrollHeight
-
-        if (currentHeight === realHeight) {
-            cardToSlide.style.height = '0px'
-        } else {
-            cardToSlide.style.height = `${realHeight}px`
-        }
+        cardToSlide.style.width = `100vw`
+        this.props.selectCard(cardToSlide)
     }
     
     render() {
@@ -35,3 +31,9 @@ export default class Card extends Component {
     )
   }
 }
+
+const actions = {
+    selectCard
+}
+
+export default connect(null, actions)(Card)

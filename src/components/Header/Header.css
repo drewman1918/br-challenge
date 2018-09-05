@@ -7,6 +7,7 @@
     font-size: 17px;
     font-weight: 700;
     height: 80px;
+    justify-content: center;
     letter-spacing: 1px;
     padding: 12px 20px;
     position: fixed;
@@ -27,9 +28,21 @@
     justify-self: end;
 }
 
+.content > div {
+    justify-self: start;
+    display: flex;
+    align-items: center;
+}
+
 #mapIcon{
     height: 34px;
     width: 34px;
+}
+
+#backIcon{
+    font-size: 48px;
+    cursor: pointer;
+    margin: -14px;
 }
 
 .material-icons{

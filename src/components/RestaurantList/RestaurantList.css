@@ -1,7 +1,7 @@
 /********* CARD.JS *********/
 
 .cardContainer{
-    max-width: 475px;
+    max-width: 500px;
 }
 .restaurantCard{
     height: 180px;
@@ -41,9 +41,16 @@
 
 .detailCard{
     font-family: 'Lato', sans-serif;
-    height: 0;
+    background: rgb(255,255,255);
+    height: 100vh;
+    left: 0;
     overflow: hidden;
-    transition: ease-in-out 0.3s height;
+    margin-top: 80px;
+    position: fixed;
+    top:0;
+    transition: ease-in-out 0.3s width;
+    width: 0;
+    z-index: 5;
 }
 
 .smallMapContainer{
@@ -52,6 +59,7 @@
 }
 
 .detailTitle{
+    align-items: center;
     background: #34B379;
     color: rgb(255, 255, 255);
     display: flex;
@@ -65,19 +73,28 @@
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 6px;
+    max-width: 1080px;
+    width: 100%;
 }
 
 .detailTitle > h4{
     font-size: 12px;
+    max-width: 1080px;
+    width: 100%;
 }
 
 .cardDetails{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     font-size: 16px;
     padding: 16px 12px;
 }
 
 .cardDetails > p {
     margin-bottom: 26px;
+    max-width: 1080px;
+    width: 100%;
 }
 
 /*********** SMALLMAP.js **********/
@@ -88,7 +105,21 @@
 }
 
 /********** MEDIA QUERIES *********/
-/********** RESTAURANTLIST.JS **********/
-@media (min-width: 475px){
+@media (min-width: 500px){
+    .restaurantList{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
+@media (min-width: 1000px){
+    .restaurantList{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1500px){
+    .restaurantList{
+        grid-template-columns: repeat(4, 1fr);
+    }
 }

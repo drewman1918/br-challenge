@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import mapIcon from './mapIcon.png'
 import axios from 'axios'
 import { connect } from 'react-redux'
-import { addRestaurantData } from './../../ducks/restReducer'
+import { addRestaurantData, removeCard } from './../../ducks/restReducer'
 import { Link, withRouter } from 'react-router-dom'
 import './Header.css'
 
@@ -12,6 +12,12 @@ class Header extends Component {
       .then((res) => {
         this.props.addRestaurantData(res.data)
       })
+  }
+
+  removeCard = () => {
+    let { selectedCard } = this.props
+    selectedCard.style.width = '0px'
+    this.props.removeCard()
   }
   
   render() {
@@ -26,9 +32,18 @@ class Header extends Component {
             </div>
             :
             <div className="content">
-              <div>{null}</div>
+              <div>
+                {
+                  (this.props.selectedCard) ?
+                    <i className="material-icons" id='backIcon' onClick={this.removeCard}>
+                      keyboard_arrow_left
+                    </i>
+                    :
+                    null
+                }
+              </div>
               <h1>Lunch Tyme</h1>
-              <Link to='/map'><img src={mapIcon} alt='Map Icon' id='mapIcon' /></Link>
+              <Link to='/map'><img src={mapIcon} alt='Map Icon' id='mapIcon' onClick={this.props.removeCard}/></Link>
             </div>
         }
 
@@ -38,8 +53,15 @@ class Header extends Component {
   }
 }
 
-const actions = {
-  addRestaurantData
+function mapStateToProps(state) {
+  return {
+    selectedCard: state.restReducer.selectedCard
+  }
 }
 
-export default withRouter(connect(null, actions)(Header))
+const actions = {
+  addRestaurantData,
+  removeCard
+}
+
+export default withRouter(connect(mapStateToProps, actions)(Header))

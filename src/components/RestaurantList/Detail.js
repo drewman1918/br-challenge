@@ -6,8 +6,7 @@ export default class Detail extends Component {
     render() {
         const { data } = this.props
     return (
-        // Used position relative to remove odd white space at bottom of page caused by some styling that comes with the NPM package I used to display the google map.
-        <div style={{position: 'relative'}}> 
+        <div > 
             <div className="smallMapContainer">
                 <SmallMap location={data.location} name={data.name}/>
             </div>
